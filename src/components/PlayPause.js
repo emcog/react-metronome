@@ -6,12 +6,13 @@ import tink from '../assets/tink.wav'; // Tell webpack this JS file uses this im
 
 // if play state is true tigger the 
 
-const PlayPause = () => {
+const PlayPause = ({miliseconds}) => {
 
     const audioRef = useRef();
     let intervalId;
-        
-    const playAudioLoop = () => { intervalId = window.setInterval(playTinkyWink, 1000)}
+   
+    const playAudioLoop = () => { intervalId = window.setInterval(playTinkyWink, miliseconds)}
+    // const playAudioLoop = () => { intervalId = window.setInterval(playTinkyWink, 1000)}
     const stopAudioLoop = () => { window.clearInterval(intervalId)}
 
     function playTinkyWink() {
