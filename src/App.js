@@ -3,6 +3,7 @@ import Metronome from './containers/Metronome';
 import './App.css';
 
 function App() {
+
   return (
     <>
       <Metronome/>
