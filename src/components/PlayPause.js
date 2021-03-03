@@ -9,32 +9,25 @@ import tink from '../assets/tink.wav'; // Tell webpack this JS file uses this im
 const PlayPause = () => {
 
     const audioRef = useRef();
-
-
-
-    // const audioLoop = window.setInterval(tink.play, 500)
+    let intervalId;
         
     const audioLoop = () => { window.setInterval(console.log("bananas"), 500)}
-    const playTink = () => {  window.setInterval(playTinkyWink, 1000)}
+    const playTink = () => {  intervalId = window.setInterval(playTinkyWink, 1000)}
+    const stopAudioLoop = () => { window.clearInterval(intervalId)}
 
     function playTinkyWink() {
         audioRef.current.play();
     }
-    // window.setInterval(console.log("bananas"), 500)
-
-
-
-    
 
 
     return (
         <>
             <p>This is Play Pause</p>
-                     <button onMouseDown={audioLoop}>audioLoop</button>
-                     <button onMouseDown={playTink}>Play Tink</button>
                      
+            <button onMouseDown={playTink}>Play</button>
+            <button onMouseDown={stopAudioLoop}>Stop</button>
 
-            <audio controls ref={audioRef}>
+            <audio ref={audioRef}>
                 <source src={tink} type="audio/wav"/>
             </audio>
 
