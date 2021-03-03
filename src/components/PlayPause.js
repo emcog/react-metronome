@@ -11,8 +11,7 @@ const PlayPause = () => {
     const audioRef = useRef();
     let intervalId;
         
-    const audioLoop = () => { window.setInterval(console.log("bananas"), 500)}
-    const playTink = () => {  intervalId = window.setInterval(playTinkyWink, 1000)}
+    const playAudioLoop = () => { intervalId = window.setInterval(playTinkyWink, 1000)}
     const stopAudioLoop = () => { window.clearInterval(intervalId)}
 
     function playTinkyWink() {
@@ -24,7 +23,7 @@ const PlayPause = () => {
         <>
             <p>This is Play Pause</p>
                      
-            <button onMouseDown={playTink}>Play</button>
+            <button onMouseDown={playAudioLoop}>Play</button>
             <button onMouseDown={stopAudioLoop}>Stop</button>
 
             <audio ref={audioRef}>
