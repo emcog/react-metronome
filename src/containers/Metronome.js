@@ -9,13 +9,18 @@ const Metronome = () => {
 
     const [miliseconds, setMilliseconds] = useState(1000);
 
+    
+    const handleSlider = (sliderValue) => { setMilliseconds(sliderValue) } 
+    
+    
+
 
 
     return (
         <>
         <h1>Metronome container</h1>
         <Title/>
-        <Slider/>
+        <Slider handleSlider={handleSlider}/>
         <PlayPause miliseconds={miliseconds}/>
         <BPMdisplay/>
         </>
